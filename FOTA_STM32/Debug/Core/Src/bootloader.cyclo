@@ -1,0 +1,13 @@
+../Core/Src/bootloader.c:33:11:BL_UART_Fetch_Host_Command	8
+../Core/Src/bootloader.c:89:13:Bootloader_Get_Chip_Identification_Number	2
+../Core/Src/bootloader.c:109:16:CBL_STM32F401_Get_RDP_Level	1
+../Core/Src/bootloader.c:118:13:Bootloader_Read_Protection_Level	4
+../Core/Src/bootloader.c:141:13:Bootloader_Jump_To_User_App	3
+../Core/Src/bootloader.c:185:16:Perform_Flash_Erase	7
+../Core/Src/bootloader.c:243:13:Bootloader_Erase_Flash	3
+../Core/Src/bootloader.c:272:16:Flash_Memory_Write_Payload	7
+../Core/Src/bootloader.c:314:13:Bootloader_Memory_Write	4
+../Core/Src/bootloader.c:358:16:Host_Address_Verification	5
+../Core/Src/bootloader.c:377:16:Bootloader_CRC_Verify	3
+../Core/Src/bootloader.c:401:13:Bootloader_Send_NACK	1
+../Core/Src/bootloader.c:407:13:Bootloader_Send_Data_To_Host	1
