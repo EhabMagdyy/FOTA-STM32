@@ -146,12 +146,13 @@ static void Bootloader_Jump_To_User_App(uint8_t *Host_Buffer)
 	/* Extract the CRC32 and packet length sent by the HOST */
 	Host_CMD_Packet_Len = Host_Buffer[0] + 1;
 	Host_CRC32 = *((uint32_t *)((Host_Buffer + Host_CMD_Packet_Len) - CRC_TYPE_SIZE_BYTE));
-/* CRC Verification */
+	/* CRC Verification */
 	if(CRC_VERIFICATION_PASSED == Bootloader_CRC_Verify((uint8_t *)&Host_Buffer[0] , Host_CMD_Packet_Len - 4, Host_CRC32))
 	{
 		if(0xFFFFFFFF != *((volatile uint32_t *)FLASH_SECTOR2_BASE_ADDRESS))
 		{
 			appExists = 1;
+			Bootloader_Send_Data_To_Host((uint8_t *)&appExists, 1);
 			/* Value of the main stack pointer of our main application */
 			uint32_t MSP_Value = *((volatile uint32_t *)FLASH_SECTOR2_BASE_ADDRESS);
 
@@ -167,7 +168,6 @@ static void Bootloader_Jump_To_User_App(uint8_t *Host_Buffer)
 			/* DeInitialize / Disable of modules */
 			HAL_RCC_DeInit(); /* DeInitialize the RCC clock configuration to the default reset state. */
 			                  /* Disable Maskable Interrupt */
-			Bootloader_Send_Data_To_Host((uint8_t *)&appExists, 1);
 			/* Jump to Application Reset Handler */
 			ResetHandler_Address();
 		}
