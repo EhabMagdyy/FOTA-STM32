@@ -1,0 +1,253 @@
+[
+    {
+        "id": "daa0b6f4cff1a978",
+        "type": "mqtt in",
+        "z": "ed71262c10a89ab3",
+        "name": "",
+        "topic": "/FOTA/BootReply",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "a5801d1715eeb391",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "2f8dd333b9b4f8ea"
+            ]
+        ]
+    },
+    {
+        "id": "e5f2eca9aa981fc2",
+        "type": "mqtt out",
+        "z": "ed71262c10a89ab3",
+        "name": "",
+        "topic": "/FOTA/Boot",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a5801d1715eeb391",
+        "x": 710,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "952b55eea95f1dd4",
+        "type": "ui_button",
+        "z": "ed71262c10a89ab3",
+        "name": "",
+        "group": "fab59aeb6d90bde0",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Upload Application",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "U",
+        "payloadType": "str",
+        "topic": "/FOTA/Boot",
+        "topicType": "msg",
+        "x": 410,
+        "y": 480,
+        "wires": [
+            [
+                "e5f2eca9aa981fc2"
+            ]
+        ]
+    },
+    {
+        "id": "786e892bdb10ccc8",
+        "type": "ui_button",
+        "z": "ed71262c10a89ab3",
+        "name": "",
+        "group": "fab59aeb6d90bde0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Read Protection Level",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "R",
+        "payloadType": "str",
+        "topic": "/FOTA/Boot",
+        "topicType": "msg",
+        "x": 340,
+        "y": 300,
+        "wires": [
+            [
+                "e5f2eca9aa981fc2"
+            ]
+        ]
+    },
+    {
+        "id": "df13fbe74880b393",
+        "type": "ui_button",
+        "z": "ed71262c10a89ab3",
+        "name": "",
+        "group": "fab59aeb6d90bde0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Jump to Application",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "J",
+        "payloadType": "str",
+        "topic": "/FOTA/Boot",
+        "topicType": "msg",
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "e5f2eca9aa981fc2"
+            ]
+        ]
+    },
+    {
+        "id": "bf0d20d6f9af64f5",
+        "type": "ui_button",
+        "z": "ed71262c10a89ab3",
+        "name": "",
+        "group": "fab59aeb6d90bde0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Get Chip ID",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "G",
+        "payloadType": "str",
+        "topic": "/FOTA/Boot",
+        "topicType": "msg",
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "e5f2eca9aa981fc2"
+            ]
+        ]
+    },
+    {
+        "id": "dbaca7e4716489e3",
+        "type": "ui_button",
+        "z": "ed71262c10a89ab3",
+        "name": "",
+        "group": "fab59aeb6d90bde0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Erase Flash",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "E",
+        "payloadType": "str",
+        "topic": "/FOTA/Boot",
+        "topicType": "msg",
+        "x": 370,
+        "y": 420,
+        "wires": [
+            [
+                "e5f2eca9aa981fc2"
+            ]
+        ]
+    },
+    {
+        "id": "2f8dd333b9b4f8ea",
+        "type": "ui_text",
+        "z": "ed71262c10a89ab3",
+        "group": "fab59aeb6d90bde0",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Bootloader Replay:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "Tahoma,Geneva,sans-serif",
+        "fontSize": "18",
+        "color": "#e0fdff",
+        "x": 710,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a5801d1715eeb391",
+        "type": "mqtt-broker",
+        "name": "test.mosquitto.org",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "fab59aeb6d90bde0",
+        "type": "ui_group",
+        "name": "Bootloader Options",
+        "tab": "1a91bd87f5b0f8ea",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1a91bd87f5b0f8ea",
+        "type": "ui_tab",
+        "name": "FOTA",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]
