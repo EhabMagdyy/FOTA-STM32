@@ -9,13 +9,13 @@ This project implements a Firmware Over-The-Air (FOTA) update mechanism for STM3
 
 ---
 
-## Overview
+### Workflow Overview
 
-This project aims to facilitate remote firmware updates and control of an STM32 microcontroller via Node-RED and ESP32. The custom bootloader allows the STM32 to:
-
-1. Receive firmware updates from Firebase.
-2. Perform various operations like erasing flash, jumping to application code, retrieving chip IDs, and checking protection levels.
-3. Communicate with a Node-RED Dashboard via ESP32.
+1. User selects a command from the Node-RED Dashboard.
+2. The ESP receives the command from Node-RED.
+3. The ESP appends other details to the command, calculates the CRC of the packet, and then sends it to the STM32 bootloader.
+4. The bootloader receives the packet, calculates its CRC to verify that the packet was received successfully.
+5. Bootloader performs the operations needed by the command (return data/status to the ESP to be shown in Node-RED)
 
 ---
 
@@ -83,7 +83,7 @@ This project aims to facilitate remote firmware updates and control of an STM32 
 
 ---
 
-## Node-RED Commands
+## Node-RED Commands & Components
 
 The following commands can be sent from the Node-RED Dashboard to the STM32 via ESP32:
 
@@ -92,3 +92,4 @@ The following commands can be sent from the Node-RED Dashboard to the STM32 via 
 3. **Jump to Application**
 4. **Get Chip ID**
 5. **Read Protection Level**
+- **Text Field to shown the received data/status from STM32.**
