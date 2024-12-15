@@ -54,6 +54,20 @@ This project implements a Firmware Over-The-Air (FOTA) update mechanism for STM3
 
 ---
 
+## Hardware Connections
+
+For communication between the STM32F4 and ESP32, use the following connections:
+
+|    **STM32F4**    |   **ESP32**   |
+|-------------------|---------------|
+| Tx1 (A9)          | Rx2           |
+| Rx1 (A10)         | Tx2           |
+| GND               | GND           |
+
+Ensure all devices share a common ground to avoid communication issues.
+
+---
+
 ## Setup
 
 1. **Clone the Repository**:
