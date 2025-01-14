@@ -2,6 +2,15 @@
 
 This project implements a Firmware Over-The-Air (FOTA) update mechanism for STM32 microcontrollers using a custom bootloader. The STM32 communicates with a host (Node-RED) via ESP32 to receive commands from a Node-RED Dashboard. The firmware update file is stored in Firebase and delivered to the STM32 for seamless updates.
 
+### Table of Contents
+1. [Workflow Overview](#workflow-overview)
+2. [System Architecture](#system-architecture)
+3. [Features](#features)
+4. [Components](#components)
+5. [Hardware Connections](#hardware-connections)
+6. [Setup](#setup)
+7. [Node-RED Commands & Components](#node-red-commands--components)
+
 ---
 
 ### Video link: https://youtu.be/6jXGq0C-o00
@@ -9,7 +18,7 @@ This project implements a Firmware Over-The-Air (FOTA) update mechanism for STM3
 
 ---
 
-### Workflow Overview
+## Workflow Overview
 
 1. User selects a command from the Node-RED Dashboard.
 2. The ESP receives the command from Node-RED.
