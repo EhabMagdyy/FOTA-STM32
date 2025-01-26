@@ -103,6 +103,9 @@ Ensure all devices share a common ground to avoid communication issues.
 5. **Firebase Setup**:
    - Host the firmware update files in Firebase.
    - ***See this video: https://youtu.be/MsZfV0x_G8k?si=pQoq8CVdHGI1mdZX***
+* Free Alternative for Hosting and downloading update file: **Supabase Setup**
+   - Host the firmware update files in Supabase.
+   - ***See this video:https://youtu.be/kj9r1ZNDGgY***
 
 ---
 
