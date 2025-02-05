@@ -78,22 +78,15 @@ Ensure all devices share a common ground to avoid communication issues.
 ---
 
 ## Setup
-
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/yourusername/stm32-fota-esp32
-   ```
-
-2. **Setup Node-RED**:
+1. **Setup Node-RED**:
    - Install Node-RED: [Node-RED Installation Guide](https://nodered.org/docs/getting-started/)
    - Import the `Node-RED` flow provided in `node-red/flow.json`.
    - ***how to use Node-RED with ESP32: https://youtu.be/N4uf23x4vmM?si=OWFQuKNQUvaNG4Lu***
 
-3. **Flash ESP32**:
+2. **Flash ESP32**:
    - Flash the `esp32-fota` firmware using PlatformIO or Arduino IDE.
 
-4. **STM32 Bootloader**:
+3. **STM32 Bootloader**:
    - Flash the custom bootloader to the STM32 using STM32CubeProgrammer.
 
 4. **STM32 Update file**:
@@ -103,7 +96,8 @@ Ensure all devices share a common ground to avoid communication issues.
 5. **Firebase Setup**:
    - Host the firmware update files in Firebase.
    - ***See this video: https://youtu.be/MsZfV0x_G8k?si=pQoq8CVdHGI1mdZX***
-5. **Supabase Setup**, Free Alternative for Hosting and downloading update file: 
+     
+6. If you need Free Alternative for Hosting and downloading update file, **Supabase Setup**: 
    - Host the firmware update files in Supabase.
    - ***See this video:https://youtu.be/kj9r1ZNDGgY***
 
